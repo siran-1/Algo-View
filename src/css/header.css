@@ -1,0 +1,42 @@
+#header-container{
+    background-color: var(--light-background);
+    display: flex;
+    gap: 2em;
+}
+
+.algo-view-title{
+    color: var(--Black);
+    text-align: center;
+    line-height: 0.9em;
+    font-size:var(--size-4xl);
+    letter-spacing:1px;
+    user-select: none;
+}
+.navbar-nav{
+   display: flex;
+   flex-direction: row;
+   gap: 1em;
+}
+
+.navbar-nav li a{
+    color: var(--Black);
+}
+
+.dropdown-submenu{
+    position: relative;
+}
+
+.submenu{
+    position: absolute;
+    left: 160px;
+    top: 0;
+    background-color: var(--light-background);
+    padding: 0.2em;
+    border-radius: .25rem;
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+
+.submenu li{
+    margin: 0;
+    padding: 0;
+}

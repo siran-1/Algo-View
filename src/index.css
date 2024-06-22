@@ -1,0 +1,145 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color:  var(--Black);
+  background-color: var(--Off-White);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+   /* backgrounds */
+  --light-background: #fafafa;
+  --Off-White: #eeeff1;
+
+  /* accents */
+  --Black: #1A1B1F;
+  --Light-black: #62646d;
+
+  /* Mandate-colors */
+  --white-important: #edf2f4;
+  --pink: #df79ad;
+  
+    /*sizes*/
+    --size-xxs:0.5rem;
+    --size-xs:0.75rem;
+    --size-sm:0.875rem;
+    --size-base:1rem;
+    --size-lg:1.125rem;
+    --size-xl:1.25rem;
+    --size-2xl:1.5rem;
+    --size-3xl:1.875rem;
+    --size-4xl:2.25rem;
+    --size-5xl:3rem;
+    --size-6xl:3.75rem;
+    --size-7xl:4.5rem;
+    --size-8xl:6rem;
+    --size-9xl:8rem;
+    --size-10xl:10rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system,  BlinkMacSystemFont, Neuehaa,"Open sans", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+img, video, picture, canvas, svg {
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+code, pre{
+  color: var(--pink);
+  display: block;
+  margin-top: 5px;
+  padding: 0.5em;
+  background-color: #df79ae2d;
+  border-radius: 6px;
+  width: 100%;
+  overflow: auto;
+  font-size: 0.80rem !important;
+}
+
+.noSupport{
+  height: 85vh;
+  font-size: var(--size-5xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--Off-White);
+}
+
+h4{
+  text-decoration: underline;
+}
+
+.btn {
+  box-shadow: rgba(0, 0, 0, 0.092) 0px 1px 3px, rgba(0, 0, 0, 0.62) 0px 1px 2px;
+  transition: box-shadow 0.3s ease;  
+}
+
+.btn:active {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); 
+  position: relative;
+  top: 1px; 
+  outline: none !important;
+}
+
+.btn:focus {
+  outline: none !important; 
+  box-shadow: rgba(0, 0, 0, 0.092) 0px 1px 3px, rgba(0, 0, 0, 0.62) 0px 1px 2px;
+}
+
+.dropdown-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* F O N T S */
+@font-face {
+  font-family: Neuehaa;
+  src: url(./assets/fonts/NeueHaasUnica-Regular.ttf);
+}
+
+@font-face {
+  font-family: ikaros;
+  src: url(./assets/fonts/Ikaros-Regular.otf);
+}
+
+
+ /* S C R O L L B A R */
+ /* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #505050; 
+  border-radius: 10px;  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a0a0; 
+}

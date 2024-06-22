@@ -1,0 +1,133 @@
+.object-container{
+    display: flex;
+    height: 100%;
+    padding: 10px;  
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.object-child-one{
+    width:75%;
+    padding: 0.7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;   
+}
+
+.object-visualizer{
+    width:750px;
+    height: 100%;
+    border: 1.5px solid var(--pink);
+    background-color: var(--light-background);
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.object-controls{
+   display: flex;
+   gap: 1em;
+}
+
+.object-controls > div{
+   display: flex;
+}
+
+.object-child-two{
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    padding: 0.7em;
+    width: 25%;
+    font-size: var(--size-sm);
+    overflow-y: scroll;
+    color: rgb(80, 80, 80);
+}
+
+
+ /* O B J E C T - V I S U A L I Z E R */
+ .object-visualizer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+ }
+ 
+ .object-visualizer > div{
+   display: flex;
+   flex-direction: column-reverse;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+ }
+
+ .object-parent{
+    border: 1.2px solid var(--Black);
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.557) 0px 1px 3px, rgba(0, 0, 0, 0.647) 0px 1px 2px;
+ }
+
+ .object-parent > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+ }
+
+ .objectElement{
+    width: 50px;
+    height: 50px;
+    border: 1.5px solid var(--Black);
+    cursor: default !important;
+    background-color: var(--light-background);
+ }
+   .btn-label{
+    font-size: 0.7rem;
+ }
+ 
+ .object-new, .object-property-new,.object-reset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border: 1.2px solid var(--pink);
+    padding: 1em;
+    border-radius: 6px;
+    background-color: var(--light-background);
+ }
+
+ .form-label{
+    font-size: var(--size-xs);
+    text-align: center;
+    user-select: none;
+ }
+
+ .form-control{
+    width: 100px;
+    height: 25px;
+    font-size: var(--size-xs);
+    margin: 1px;
+    background-color: var(--Off-White);
+ }
+
+ .form-control:focus{
+   color: var(--Light-black) !important;
+   background-color: var(--Off-White) !important;
+   border-color: var(--Black) !important;
+   box-shadow:none !important;
+ }
+
+ .object-addBtn{
+   width: 100px;
+   height: 35px;
+   font-size: var(--size-sm) !important;
+ }
