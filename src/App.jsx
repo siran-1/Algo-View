@@ -11,6 +11,7 @@ import BinaryTreeComponent from './components/BinaryTreeComponent';
 import DepthFirstComponent from './components/DepthFirstComponent';
 
 import './App.css'
+import algoView from './assets/algo-view.svg';
 
 function App() {
 
@@ -43,7 +44,7 @@ function App() {
         ) : (
           <div className='Empty-Content'>
             <p>Visualize and interact with JavaScript data structures and algorithms effortlessly.</p>
-            <img id="algo-view-png" src='../src/assets/algo-view.svg'/>
+            <img id="algo-view-png" src={algoView}/>
             <p className='info'>Select from the above dropdown</p>
           </div>
         )}
