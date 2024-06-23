@@ -11,7 +11,8 @@ import BinaryTreeComponent from './components/BinaryTreeComponent';
 import DepthFirstComponent from './components/DepthFirstComponent';
 
 import './App.css'
-import algoView from './assets/algo-view.svg';
+import algoView from '/algo-view.svg';
+
 
 function App() {
 
