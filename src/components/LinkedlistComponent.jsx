@@ -100,7 +100,7 @@ function LinkedlistComponent() {
     };
 
     return (
-        <div className='linkedlist-container'>
+        <div className='container linkedlist-container'>
             <div className='linkedlist-child-one'>
                 <div className="linkedlist-visualizer">{elementRenderer()}</div>
                 <div className="mt-1 linkedlist-controls">
@@ -223,8 +223,9 @@ function LinkedlistComponent() {
 }`}
                     </pre>
                 </p>
-                <h4>Reference:</h4>
-                <p>For more detailed documentation, visit: <a target='_blank' href='https://www.freecodecamp.org/news/implementing-a-linked-list-in-javascript/'>freecodecamp.org</a></p>
+                <div className='reference-div'>
+                    <p>For more detailed documentation, visit: <a target='_blank' href='https://www.freecodecamp.org/news/implementing-a-linked-list-in-javascript/'>freecodecamp.org</a></p>
+                </div>
             </div>
         </div>
     )

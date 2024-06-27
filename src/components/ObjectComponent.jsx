@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../css/object.css';
 
-
 function ObjectComponent() {
     // Object state
     const [currentObjects, setNewObj] = useState([
@@ -73,25 +72,17 @@ function ObjectComponent() {
     }
 
     return (
-        <div className='object-container'>
+        <div className='container object-container'>
             <div className='object-child-one'>
                 <div className="object-visualizer">{renderObject(currentObjects)}</div>
                 <div className="mt-1 object-controls">
-                    <div className='object-new'>
-                        <div><label className='form-label'>Define new object:</label></div>
-                        <div><button className='btn btn-add object-addBtn' onClick={addObject}>Add Object</button></div>
-                    </div>
-                    <div className='object-property-new'>
-                        <div><label className='form-label'>Add new properties:</label></div>
+                        <div><button className='btn btn-add arr-btn-unshift object-addBtn' onClick={addObject}>Add Object</button></div>
                         <div>
                             <input type='text' className='form-control object-addKey' id="newObj-prop-key" placeholder='Enter Key' />
                             <input type='text' className='form-control object-addValue' id="newObj-prop-value" placeholder='Enter Value' />
-                            <div title={isDisabled[0] ? "Select an object first!" : ""}><button className='btn btn-add object-addBtn' id="newObj-prop-AddBtn" onClick={addObjectProp} disabled={isDisabled[0]} >Insert</button></div>
+                            <div title={isDisabled[0] ? "Select an object first!" : ""}><button className='btn btn-add arr-btn-unshift object-addBtn' id="newObj-prop-AddBtn" onClick={addObjectProp} disabled={isDisabled[0]} >Insert</button></div>
                         </div>
-                    </div>
-                    <div className='object-reset'>
-                        <div><button className='btn btn-remove object-addBtn' onClick={reset}>Reset</button></div>
-                    </div>
+                        <div><button className='btn btn-remove arr-btn-shift object-addBtn' onClick={reset}>Reset</button></div>
                 </div>
             </div>
             <div className="object-child-two">
@@ -127,8 +118,9 @@ function ObjectComponent() {
                         </code><br />
                     </li>
                 </ol>
-                <h4>Reference:</h4>
+                <div className='reference-div'>
                 <p>For more detailed documentation, visit: <a target='_blank' href='https://javascript.info/object'>JavaScript.info: Objects</a></p>
+                </div>
             </div>
         </div>
     )

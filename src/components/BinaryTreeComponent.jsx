@@ -78,7 +78,7 @@ function BinaryTreeComponent() {
     }
 
     return (
-        <div className='bs-container'>
+        <div className='container bs-container'>
             <div className='bs-child-one'>
                 <div className="bs-visualizer">{depthValues(binaryTree.root)}</div>
                 <div className="mt-1 bst-controls">
@@ -153,8 +153,10 @@ class BinaryTree {
 }
 `}
                 </pre>
-                <h4>Reference:</h4>
-                <p>For more detailed documentation, visit: <a target='_blank' href='https://www.naukri.com/code360/library/binary-tree-javascript'>Naukri.com: Binary Tree</a></p>
+                <div className='reference-div'>
+                    <p>For more detailed documentation, visit: <a target='_blank' href='https://www.naukri.com/code360/library/binary-tree-javascript'>Naukri.com: Binary Tree</a></p>
+                </div>
+
             </div>
         </div>
     )

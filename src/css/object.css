@@ -1,133 +1,198 @@
-.object-container{
-    display: flex;
-    height: 100%;
-    padding: 10px;  
-    box-sizing: border-box;
-    overflow-y: scroll;
-}
-
-.object-child-one{
-    width:75%;
-    padding: 0.7em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;   
-}
-
-.object-visualizer{
-    width:750px;
-    height: 100%;
-    border: 1.5px solid var(--pink);
-    background-color: var(--light-background);
-    border-radius: 6px;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-}
-
-.object-controls{
+.object-container {
    display: flex;
-   gap: 1em;
+   padding: 10px;
+   box-sizing: border-box;
+   flex-direction: column;
 }
 
-.object-controls > div{
+.object-child-one {
    display: flex;
+   flex-direction: column;
+   align-items: center;
+   overflow-y: scroll;
 }
 
-.object-child-two{
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-    padding: 0.7em;
-    width: 25%;
-    font-size: var(--size-sm);
-    overflow-y: scroll;
-    color: rgb(80, 80, 80);
+.object-visualizer {
+   width: 100%;
+   height: 400px;
+   border: 1.5px solid var(--pink);
+   background-color: var(--light-background);
+   border-radius: 6px;
+   display: flex;
+   flex-wrap: wrap;
+   overflow: auto;
+}
+
+.object-controls {
+   display: flex;
+   justify-content: center;
+   gap: 0.5em;
+   border: 1.2px solid var(--pink);
+   padding: 0.2em;
+   border-radius: 6px;
+   background-color: var(--light-background);
+}
+
+.object-child-two {
+   margin-top: 5rem;
+   margin-bottom: 10px;
+   font-size: var(--size-sm);
+   overflow-y: scroll;
+   color: rgb(80, 80, 80);
 }
 
 
- /* O B J E C T - V I S U A L I Z E R */
- .object-visualizer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.2em;
- }
- 
- .object-visualizer > div{
+/* O B J E C T - V I S U A L I Z E R */
+.object-visualizer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.2em;
+}
+
+.object-visualizer>div {
    display: flex;
    flex-direction: column-reverse;
    align-items: center;
    justify-content: center;
    position: relative;
- }
+}
 
- .object-parent{
-    border: 1.2px solid var(--Black);
-    padding: 1em;
-    display: flex;
-    flex-wrap: wrap;
-    width: 200px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.557) 0px 1px 3px, rgba(0, 0, 0, 0.647) 0px 1px 2px;
- }
+.object-parent {
+   width: 150px;
+   border: 1.2px solid var(--Black);
+   padding: 1em;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   border-radius: 6px;
+   cursor: pointer;
+   box-shadow: rgba(0, 0, 0, 0.557) 0px 1px 3px, rgba(0, 0, 0, 0.647) 0px 1px 2px;
+}
 
- .object-parent > div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70px;
-    height: 70px;
- }
+.object-parent>div {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 50px;
+   height: 50px;
+}
 
- .objectElement{
-    width: 50px;
-    height: 50px;
-    border: 1.5px solid var(--Black);
-    cursor: default !important;
-    background-color: var(--light-background);
- }
-   .btn-label{
-    font-size: 0.7rem;
- }
- 
- .object-new, .object-property-new,.object-reset{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    border: 1.2px solid var(--pink);
-    padding: 1em;
-    border-radius: 6px;
-    background-color: var(--light-background);
- }
+.object-parent .btn-label {
+   font-size: 0.6rem !important;
+}
 
- .form-label{
-    font-size: var(--size-xs);
-    text-align: center;
-    user-select: none;
- }
+.objectElement {
+   width: 40px;
+   height: 40px;
+   border: 1.5px solid var(--Black);
+   cursor: default !important;
+   background-color: var(--light-background);
+   font-size: 0.6rem !important;
+}
 
- .form-control{
-    width: 100px;
-    height: 25px;
-    font-size: var(--size-xs);
-    margin: 1px;
-    background-color: var(--Off-White);
- }
+.form-label {
+   font-size: var(--size-xs);
+   text-align: center;
+   user-select: none;
+}
 
- .form-control:focus{
+.form-control {
+   width: 95px;
+   height: 25px;
+   font-size: var(--size-xs);
+   margin: 1px;
+   background-color: var(--Off-White);
+}
+
+.form-control:focus {
    color: var(--Light-black) !important;
    background-color: var(--Off-White) !important;
    border-color: var(--Black) !important;
-   box-shadow:none !important;
- }
+   box-shadow: none !important;
+}
 
- .object-addBtn{
-   width: 100px;
+.object-addBtn {
+   width: 95px;
    height: 35px;
-   font-size: var(--size-sm) !important;
- }
+   font-size: var(--size-xs) !important;
+}
+
+
+/* media queries */
+/* xs */
+@media screen and (min-width: 475px) {}
+
+/* sm */
+@media screen and (min-width: 640px) {}
+
+/* md */
+@media screen and (min-width: 768px) {
+   .object-parent {
+      width: 180px;
+   }
+
+   .object-parent>div {
+      width: 70px;
+      height: 70px;
+   }
+
+   .object-parent .btn-label {
+      font-size: 0.7rem !important;
+   }
+
+   .objectElement {
+      width: 50px;
+      height: 50px;
+   }
+}
+
+/* lg */
+@media screen and (min-width: 1024px) {
+   .object-container {
+      flex-direction: row;
+      height: 80vh !important;
+   }
+
+   .object-child-one {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: scroll;
+   }
+
+   .object-visualizer {
+      width: 750px;
+      height: 399px;      
+   }
+
+   .objectElement {
+      width: 50px;
+      height: 50px;
+   }
+
+
+   .object-child-two {
+      margin-top: 10px;
+      width: 25%;
+      font-size: var(--size-sm);
+   }
+
+   .object-parent {
+      width: 200px;
+   }
+
+   .object-parent>div {
+      width: 70px;
+      height: 70px;
+   }
+
+}
+
+/* xl */
+@media screen and (min-width: 1280px) {}
+
+/* 2xl */
+@media screen and (min-width: 1536px) {}

@@ -92,7 +92,7 @@ function MergesortComponent() {
 
 
     return (
-        <div className='mergesort-container'>
+        <div className='container mergesort-container'>
             <div className='mergesort-child-one'>
                 <div className="mergesort-visualizer">{arrElementRenderer()}</div>
                 <div className="mt-1 mergesort-controls">
@@ -130,8 +130,10 @@ function MergesortComponent() {
                         </li>
                     </ol>
                 </p>
-                <h4>Reference:</h4>
-                <p>For more detailed documentation, visit: <a target='_blank' href='https://medium.com/analytics-vidhya/implement-merge-sort-algorithm-in-javascript-7402b7271887'>Medium.com: Merge Sort</a></p>
+                <div className='reference-div'>
+                    <p>For more detailed documentation, visit: <a target='_blank' href='https://medium.com/analytics-vidhya/implement-merge-sort-algorithm-in-javascript-7402b7271887'>Medium.com: Merge Sort</a></p>
+                </div>
+
             </div>
         </div>
     );

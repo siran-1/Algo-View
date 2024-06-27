@@ -9,6 +9,7 @@ import MergesortComponent from './components/MergesortComponent';
 import BinarySearchTreeComponent from './components/BinarySearchTreeComponent';
 import BinaryTreeComponent from './components/BinaryTreeComponent';
 import DepthFirstComponent from './components/DepthFirstComponent';
+import Footer from './components/Footer';
 
 import './App.css'
 import algoView from '/algo-view.svg';
@@ -43,13 +44,14 @@ function App() {
         {selectedItem ? (
           SelectedComponent ? <SelectedComponent /> : <p>No component found for {selectedItem}</p>
         ) : (
-          <div className='Empty-Content'>
+          <div className='container Empty-Content'>
             <p>Visualize and interact with JavaScript data structures and algorithms effortlessly.</p>
             <img id="algo-view-png" src={algoView}/>
             <p className='info'>Select from the above dropdown</p>
           </div>
         )}
       </main>
+      <Footer></Footer>
     </>
   )
 }

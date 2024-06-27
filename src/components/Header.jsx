@@ -6,9 +6,21 @@ function Header({ onSelect }) {
     const [showSearching, setShowSearching] = useState(false);
     const [showOthers, setShowOthers] = useState(false);
 
+    const handleMouseEnterSorting = () => setShowSorting(true);
+    const handleMouseLeaveSorting = () => setShowSorting(false);
+    const handleTouchStartSorting = () => setShowSorting(true);
+
+    const handleMouseEnterSearching = () => setShowSearching(true);
+    const handleMouseLeaveSearching = () => setShowSearching(false);
+    const handleTouchStartSearching = () => setShowSearching(true);
+
+    const handleMouseEnterOthers = () => setShowOthers(true);
+    const handleMouseLeaveOthers = () => setShowOthers(false);
+    const handleTouchStartOthers = () => setShowOthers(true);
+
     return (
-        <div className="shadow-sm p-3" id="header-container">
-            <label className="algo-view-title" href="#">Algo-View</label>
+        <div className="container shadow-sm p-3" id="header-container">
+            <a className="algo-view-title" href="">Algo View</a>
             <ul className="navbar-nav">
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DATA STRUCTURES</a>
@@ -25,24 +37,33 @@ function Header({ onSelect }) {
                         ALGORITHMS
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="algorithmsDropdown">
-                        <li className="dropdown-submenu" onMouseEnter={() => setShowSorting(true)} onMouseLeave={() => setShowSorting(false)}>
-                            <a className="dropdown-item" href="#">Sorting <i class="fas fa-caret-right"></i></a>
+                        <li className="dropdown-submenu" 
+                            onMouseEnter={handleMouseEnterSorting} 
+                            onMouseLeave={handleMouseLeaveSorting} 
+                            onTouchStart={handleTouchStartSorting}>
+                            <a className="dropdown-item" href="#">Sorting <i className="fas fa-caret-right"></i></a>
                             {showSorting && (
                                 <div className="submenu">
                                     <li><a className="dropdown-item" href="#" onClick={() => onSelect('MergeSort')}>Merge Sort</a></li>
                                 </div>
                             )}
                         </li>
-                        <li className="dropdown-submenu" onMouseEnter={() => setShowSearching(true)} onMouseLeave={() => setShowSearching(false)}>
-                            <a className="dropdown-item" href="#" >Searching <i class="fas fa-caret-right"></i></a>
+                        <li className="dropdown-submenu" 
+                            onMouseEnter={handleMouseEnterSearching} 
+                            onMouseLeave={handleMouseLeaveSearching} 
+                            onTouchStart={handleTouchStartSearching}>
+                            <a className="dropdown-item" href="#">Searching <i className="fas fa-caret-right"></i></a>
                             {showSearching && (
                                 <div className="submenu">
                                     <li><a className="dropdown-item" href="#" onClick={() => onSelect('DepthFirst')}>Depth First Search</a></li>
                                 </div>
                             )}
                         </li>
-                        <li className="dropdown-submenu" onMouseEnter={() => setShowOthers(true)} onMouseLeave={() => setShowOthers(false)}>
-                            <a className="dropdown-item" href="#" >Others <i class="fas fa-caret-right"></i></a>
+                        <li className="dropdown-submenu" 
+                            onMouseEnter={handleMouseEnterOthers} 
+                            onMouseLeave={handleMouseLeaveOthers} 
+                            onTouchStart={handleTouchStartOthers}>
+                            <a className="dropdown-item" href="#">Others <i className="fas fa-caret-right"></i></a>
                             {showOthers && (
                                 <div className="submenu">
                                     <li><a className="dropdown-item" href="#">...</a></li>
@@ -53,8 +74,7 @@ function Header({ onSelect }) {
                 </li>
             </ul>
         </div>
-    )
+    );
 }
-
 
 export default Header;

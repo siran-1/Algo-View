@@ -83,7 +83,7 @@ function BinarySearchTreeComponent() {
     }
 
     return (
-        <div className='bst-container'>
+        <div className='container bst-container'>
             <div className='bst-child-one'>
                 <div className="bst-visualizer">{depthValues(binaryTree.root)}</div>
                 <div className="mt-1 bst-controls">
@@ -161,8 +161,9 @@ class Bst {
     }
 }
 `}</pre>
-                <h4>Reference:</h4>
-                <p>For more detailed documentation, visit: <a target='_blank' href='https://www.freecodecamp.org/news/binary-tree-algorithms-for-javascript-beginners/'>freecodecamp.org: Binary Search Tree</a></p>
+                <div className='reference-div'>
+                    <p>For more detailed documentation, visit: <a target='_blank' href='https://www.freecodecamp.org/news/binary-tree-algorithms-for-javascript-beginners/'>freecodecamp.org: Binary Search Tree</a></p>
+                </div>
             </div>
         </div>
     )

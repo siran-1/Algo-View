@@ -1,0 +1,45 @@
+#footer-container {
+    background-color: var(--light-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    position: relative;
+    bottom: 0;
+}
+
+.link {
+    color: var(--Black);
+    text-align: center;
+    line-height: 0.9em;
+    font-size: var(--size-2xl);
+    user-select: none;
+    text-decoration: none;
+}
+
+
+/* media queries */
+/* xs */
+@media screen and (min-width: 475px) {}
+
+/* sm */
+@media screen and (min-width: 640px) {}
+
+/* md */
+@media screen and (min-width: 768px) {
+
+}
+
+/* lg */
+@media screen and (min-width: 1024px) {
+
+}
+
+/* xl */
+@media screen and (min-width: 1280px) {
+}
+
+/* 2xl */
+@media screen and (min-width: 1536px) {
+    
+}

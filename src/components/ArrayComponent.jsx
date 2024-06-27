@@ -31,7 +31,7 @@ function ArrayComponent() {
                 opacity: e.isVisible ? 1 : 0,
                 transition: 'opacity 0.8s ease, background-color 0.8s ease',
             };
-           
+
             return (
                 <div key={keyrendrer()}>
                     <button className='btn btn-sm arrayElement' style={style}>{e.value}</button>
@@ -64,7 +64,7 @@ function ArrayComponent() {
 
 
     return (
-        <div className='array-container'>
+        <div className='container array-container'>
             <div className='array-child-one'>
                 <div className="array-visualizer">{arrElementRenderer(currentElements)}</div>
                 <div className="mt-1 array-controls">
@@ -104,8 +104,10 @@ function ArrayComponent() {
                 <p>shift method remove an element from the first index of the array and returns the value.
                     <code>arr.shift();</code>
                 </p>
-                <h4>Reference:</h4>
-                <p>For more detailed documentation, visit: <a target='_blank' href='https://javascript.info/array'>JavaScript.info: Arrays</a></p>
+                <div className='reference-div'>
+                    <p>For more detailed documentation, visit: <a target='_blank' href='https://javascript.info/array'>JavaScript.info: Arrays</a></p>
+                </div>
+
             </div>
         </div>
     )

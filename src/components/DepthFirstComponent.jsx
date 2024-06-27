@@ -112,7 +112,7 @@ function DepthFirstComponent() {
     }
 
     return (
-        <div className='bst-container'>
+        <div className='container bst-container'>
             <div className='bst-child-one'>
                 <div className="bst-visualizer">{nodeGenerator(binaryTree.root)}</div>
                 <div className="mt-1 bst-controls">
@@ -163,8 +163,9 @@ function DepthFirstComponent() {
                         <p>Visit the left branch - Visit the right branch - Visit the node. Often used for deleting or freeing nodes starting from the leaves back to the root.</p>
                     </li>
                 </ol>
-                <h4>Reference:</h4>
-                <p>For more detailed documentation, visit: <a target='_blank' href='https://vishalrana9915.medium.com/depth-first-search-dfs-using-javascript-d59c5c200c7d'>medium.com: Depth First Search Js</a></p>
+                <div className='reference-div'>
+                    <p>For more detailed documentation, visit: <a target='_blank' href='https://vishalrana9915.medium.com/depth-first-search-dfs-using-javascript-d59c5c200c7d'>medium.com: Depth First Search Js</a></p>
+                </div>
             </div>
         </div>
     )
