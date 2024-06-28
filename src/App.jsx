@@ -25,14 +25,13 @@ function App() {
     'Object': ObjectComponent,
     'LinkedList': LinkedlistComponent,
     'MergeSort': MergesortComponent,
-    'BinaryTree':BinaryTreeComponent,
+    'BinaryTree': BinaryTreeComponent,
     'BinarySearchTree': BinarySearchTreeComponent,
     'DepthFirst': DepthFirstComponent,
   };
 
   // Setting component
   const SelectedComponent = selectedItem ? components[selectedItem] : null;
-
   const handleSelect = (item) => {
     setSelectedItem(item);
   };
@@ -45,8 +44,8 @@ function App() {
           SelectedComponent ? <SelectedComponent /> : <p>No component found for {selectedItem}</p>
         ) : (
           <div className='container Empty-Content'>
-            <p>Visualize and interact with JavaScript data structures and algorithms effortlessly.</p>
-            <img id="algo-view-png" src={algoView}/>
+            <p>Visualize JavaScript Data structures and Algorithms</p>
+            <img id="algo-view-png" src={algoView} />
             <p className='info'>Select from the above dropdown</p>
           </div>
         )}
