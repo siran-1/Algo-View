@@ -33,12 +33,13 @@
 
 .submenu {
     position: absolute;
-    left: 90px;
+    left: 100px;
     top: 0px;
     background-color: var(--light-background);
     padding: 0.2em;
     border-radius: .25rem;
     border: 1px solid rgba(0, 0, 0, .15);
+    z-index: 10;
 }
 
 .submenu li {
