@@ -112,7 +112,7 @@ h6 {
 @media screen and (min-width: 1024px) {
    .bst-container {
       flex-direction: row;
-      height: 80vh;
+      height: 100% !important;
    }
 
 
@@ -123,6 +123,7 @@ h6 {
    .bst-child-two {
       margin-top: 10px;
       width: 25%;
+      padding: 0 1em 0 0;
    }
 
    .bst-visualizer{

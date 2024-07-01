@@ -3,14 +3,16 @@ import '../css/object.css';
 
 function ObjectComponent() {
     // Object state
-    const [currentObjects, setNewObj] = useState([
-        {},
-    ]);
+    const [currentObjects, setNewObj] = useState(
+        [{}]
+    );
+
+    // key value state
+    const [keyValue, setkeyvalue] = useState(["", ""]);
 
     // Add prop btn state
     const [isDisabled, setIsDisabled] = useState([true, null]);
-    const [selected, setSelected] = useState(null);  // Tracks the object selected index
-    const [showPopUp, setPopUp] = useState(false); // Track popup
+    const [selectedObj, setSelectedObj] = useState(null);  // Tracks the object selected index
 
     function renderObject(objects) {
         let colors = {
@@ -39,7 +41,7 @@ function ObjectComponent() {
                         }
                         </div>
                         <span className='btn-label'>Object: {i + 1}</span>
-                        {selected === i ? (<div className='showPopUp' style={{ position: 'absolute', bottom: '100px', left: '50', backgroundColor: colors[i], padding: '5px', border: '2px solid black', fontSize: '10px', borderRadius: '5px', fontWeight: '900' }}>
+                        {selectedObj === i ? (<div className='showPopUp' style={{ position: 'absolute', bottom: '100px', left: '50', backgroundColor: colors[i], padding: '5px', border: '2px solid black', fontSize: '10px', borderRadius: '5px', fontWeight: '900' }}>
                             Object {i + 1} has been selected!
                         </div>) : <></>}
                     </div>
@@ -54,17 +56,36 @@ function ObjectComponent() {
     }
 
     function objSelector(index) {
-        setSelected(index);
+        setSelectedObj(index);
         setIsDisabled([false, index]);
-        setTimeout(() => setSelected(null), 2000);
+        setTimeout(() => setSelectedObj(null), 2000);
     }
 
     function addObjectProp() {
-        let key = document.getElementById('newObj-prop-key').value;
-        let value = document.getElementById('newObj-prop-value').value;
-        if (!key || !value) { alert('Enter Key and Value'); return; }
-        currentObjects[isDisabled[1]][key] = value;
-        setNewObj([...currentObjects])
+
+        let chosenObj = currentObjects[isDisabled[1]];
+        let key = keyValue[0].replaceAll(' ', '');
+        let value = keyValue[1].replaceAll(' ', '');
+
+        if (key === "" || value === "" || key.length > 10 || value.length > 10) {
+            alert('Please enter a valid Key and Value');
+            setkeyvalue(["", ""]);
+            return;
+        }
+
+        if (Object.keys(chosenObj).length > 2) {
+            alert('Object full');
+            Object.preventExtensions(chosenObj);
+            return;
+        }
+
+        chosenObj[key] = value;
+        Object.defineProperty(chosenObj, key, {
+            writable: false,
+        });
+
+        setNewObj([...currentObjects]);
+        setkeyvalue(["", ""]);
     }
 
     function reset() {
@@ -76,13 +97,13 @@ function ObjectComponent() {
             <div className='object-child-one'>
                 <div className="object-visualizer">{renderObject(currentObjects)}</div>
                 <div className="mt-1 object-controls">
-                        <div><button className='btn btn-add arr-btn-unshift object-addBtn' onClick={addObject}>Add Object</button></div>
-                        <div>
-                            <input type='text' className='form-control object-addKey' id="newObj-prop-key" placeholder='Enter Key' />
-                            <input type='text' className='form-control object-addValue' id="newObj-prop-value" placeholder='Enter Value' />
-                            <div title={isDisabled[0] ? "Select an object first!" : ""}><button className='btn btn-add arr-btn-unshift object-addBtn' id="newObj-prop-AddBtn" onClick={addObjectProp} disabled={isDisabled[0]} >Insert</button></div>
-                        </div>
-                        <div><button className='btn btn-remove arr-btn-shift object-addBtn' onClick={reset}>Reset</button></div>
+                    <div><button className='btn btn-add arr-btn-unshift object-addBtn' onClick={addObject}>Add Object</button></div>
+                    <div>
+                        <input type='text' className='form-control object-addKey' id="newObj-prop-key" placeholder='Enter Key' onChange={(e) => { setkeyvalue([e.target.value, keyValue[1]]) }} value={keyValue[0]} />
+                        <input type='text' className='form-control object-addValue' id="newObj-prop-value" placeholder='Enter Value' onChange={(e) => { setkeyvalue([keyValue[0], e.target.value]) }} value={keyValue[1]} />
+                        <div title={isDisabled[0] ? "Select an object first!" : ""}><button className='btn btn-add arr-btn-unshift object-addBtn' id="newObj-prop-AddBtn" onClick={addObjectProp} disabled={isDisabled[0]} >Insert</button></div>
+                    </div>
+                    <div><button className='btn btn-remove arr-btn-shift object-addBtn' onClick={reset}>Reset</button></div>
                 </div>
             </div>
             <div className="object-child-two">
@@ -119,7 +140,7 @@ function ObjectComponent() {
                     </li>
                 </ol>
                 <div className='reference-div'>
-                <p>For more detailed documentation, visit: <a target='_blank' href='https://javascript.info/object'>JavaScript.info: Objects</a></p>
+                    <p>For more detailed documentation, visit: <a target='_blank' href='https://javascript.info/object'>JavaScript.info: Objects</a></p>
                 </div>
             </div>
         </div>

@@ -1,25 +1,40 @@
-import { useState, useTransition, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../css/mergesort.css';
 
 function MergesortComponent() {
+    // Initial array state
     const initialArray = [3, 2, 11, 1, 6, 4, 10, 5, 9, 12, 8, 7];
     const [arr, setArr] = useState([initialArray]);
-    const [allSingle, setAllSingle] = useState(false);
-    // State keeper 
     const [history, setHistory] = useState([]);
     const [animate, setAnimate] = useState(false);
-    const [threshold, setthreshold] = useState(4);
-
-
+    const [recursion, setRecursion] = useState(null);
+    const isInitialMount = useRef(true);
+    const isDisabled = useRef(false);
+    const isSorting = useRef(false);
     const colors = {
         1: '#FFDE95', 2: '#ADD899', 3: '#BC5A94', 4: '#F075AA',
         5: '#83B4FF', 6: '#A1DD70', 7: '#9B86BD', 8: '#FF76CE',
         9: '#FF7F3E', 10: '#FFFF80',
     };
 
+    // Creates History of every split 
+    useEffect(() => {
+        if (isSorting.current) {
+            return;
+        };
+
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            setHistory([]);
+        } else {
+            setHistory(prevHistory => [...prevHistory, arr]);
+        }
+    }, [arr]);
+
+    // Renders the given array
     const arrElementRenderer = () => {
         return arr.map((subArray, i) => (
-            <div key={i}>
+            <div key={i} className="sub-array">
                 {subArray.map((element, j) => (
                     <div key={j} className="element" style={{
                         backgroundColor: animate ? 'green' : colors[((element - 1) % 10) + 1],
@@ -36,67 +51,101 @@ function MergesortComponent() {
         ));
     };
 
+    // Splits the array
     const splitArray = () => {
-        let newarr = [];
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].length === 1) {
-                newarr.push([...arr[i]]);
-                continue;
+        if (recursion > 0) {
+            let newarr = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].length === 1) {
+                    newarr.push([...arr[i]]);
+                    continue;
+                }
+                let midPos = Math.floor(arr[i].length / 2);
+                let leftArr = arr[i].slice(0, midPos);
+                let rightArr = arr[i].slice(midPos);
+                newarr.push(leftArr, rightArr);
             }
-
-            let midPos = Math.floor(arr[i].length / 2);
-            let leftArr = arr[i].slice(0, midPos);
-            let rightArr = arr[i].slice(midPos);
-            newarr.push(leftArr, rightArr);
+            setArr(newarr);
+            setRecursion(recursion - 1);
         }
-        setHistory(prev => [...prev, arr]);
-        setArr(newarr);
     };
 
-    const sortInitiate = () => {
-
-        if (history.length === threshold) {
-            let sortingArr = history.pop();
-            if (!sortingArr) {
-                alert('Array sorted');
-                reset();
-                return;
-            }
-
-            sortingArr.map((arr, i) => {
-                // SETTING THE ANIMATION ON
-                setAnimate(true);
-                return arr.sort((a, b) => a - b);
-            });
-
-            setArr([...sortingArr]);
-            // SETTING THE ANIMATION OFF
-            setTimeout(() => {
-                setAnimate(false);
+    // Recursion Scheduler
+    useEffect(() => {
+        // Splits array recursively
+        if (recursion !== null && recursion > 0) {
+            const timer = setTimeout(() => {
+                splitArray();
             }, 1200);
+            return () => clearTimeout(timer);
+        }
 
-            setAllSingle(true);
-            setthreshold(threshold - 1);
+        // Schedules backtrack sorting recursively
+        if (recursion === 0 && history.length) {
+            const timer = setTimeout(() => {
+                sortHistory();
+            }, 1200);
+            return () => clearTimeout(timer);
+        }
+        else if (recursion === 0 && history.length === 0){
+            alert('Array Sorted');
+            reset();
             return;
         }
-        else if (!allSingle) { splitArray(); }
-    };
 
+    }, [recursion, history]);
+
+
+    // Sorts Backtracking
+    const sortHistory = () => {
+        isSorting.current = true;
+        let sortingArr = history[history.length - 1];
+
+        if (!sortingArr) {
+            alert('Array sorted');
+            reset();
+            return;
+        }
+
+        // SORTING AND SETTING THE ANIMATION ON 
+        sortingArr.map((arr, i) => {
+            setAnimate(true);
+            return arr.sort((a, b) => a - b);
+        });
+
+        setArr([...sortingArr]);
+
+        // SETTING THE ANIMATION OFF
+        setTimeout(() => {
+            setAnimate(false);
+            setHistory(prevHistory => [...prevHistory].slice(0, history.length - 1));
+        }, 1200);
+
+    }
+
+    // Reset
     const reset = () => {
         setArr([initialArray]);
         setHistory([]);
-        setAllSingle(false);
-        setthreshold(4);
+        setRecursion(null);
         setAnimate(false);
+        isSorting.current = false;
+        isDisabled.current = false;
     };
 
+    // Main method
+    const sortInitiate = () => {
+        isDisabled.current = true;
+        const levels = Math.ceil(Math.log2(initialArray.length));
+        setRecursion(levels);
+    }
 
     return (
         <div className='container mergesort-container'>
             <div className='mergesort-child-one'>
                 <div className="mergesort-visualizer">{arrElementRenderer()}</div>
                 <div className="mt-1 mergesort-controls">
-                    <button className="btn arr-btn-unshift" onClick={sortInitiate}>next &#10148;</button>
+                    <button className="btn arr-btn-unshift" onClick={sortInitiate} disabled={isDisabled.current}>Start &#10148;</button>
                     <button className="btn arr-btn-shift" onClick={reset}>reset</button>
                 </div>
             </div>

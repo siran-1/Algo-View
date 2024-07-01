@@ -152,7 +152,7 @@
 @media screen and (min-width: 1024px) {
    .object-container {
       flex-direction: row;
-      height: 80vh !important;
+      height: 100% !important;
    }
 
    .object-child-one {
@@ -178,6 +178,7 @@
       margin-top: 10px;
       width: 25%;
       font-size: var(--size-sm);
+      padding: 0 1em 0 0;
    }
 
    .object-parent {

@@ -45,6 +45,7 @@ function Header({ onSelect }) {
                             {showSorting && (
                                 <div className="submenu">
                                     <li><a className="dropdown-item" href="#" onClick={() => onSelect('MergeSort')}>Merge Sort</a></li>
+                                    <li><a className="dropdown-item" href="#" onClick={() => onSelect('QuickSort')}>Quick Sort</a></li>
                                 </div>
                             )}
                         </li>

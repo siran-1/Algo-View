@@ -2,16 +2,16 @@
   max-width: 1536px;
   margin: 0 auto;
   background-color: var(--Off-White);
-  height: 85vh;
+  height: 100svh;
 }
 
 main {
-  height: 100%;
-  overflow: auto;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  overflow: scroll;
 }
 
 main .Empty-Content {
@@ -20,7 +20,7 @@ main .Empty-Content {
 
 .Empty-Content {
   color: #a5a3a3;
-  font-size: var(--size-4xl);
+  font-size: var(--size-3xl);
   user-select: none;
   display: flex;
   flex-direction: column;
@@ -50,10 +50,6 @@ main .Empty-Content {
 
 /* lg */
 @media screen and (min-width: 1024px) {
-
-  main {
-    margin-top: 1rem;
-  }
 
   .Empty-Content {
     font-size: var(--size-5xl);

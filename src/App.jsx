@@ -6,6 +6,7 @@ import ArrayComponent from './components/ArrayComponent';
 import ObjectComponent from './components/ObjectComponent';
 import LinkedlistComponent from './components/LinkedlistComponent';
 import MergesortComponent from './components/MergesortComponent';
+import QuickSortComponent from './components/QuickSortComponent';
 import BinarySearchTreeComponent from './components/BinarySearchTreeComponent';
 import BinaryTreeComponent from './components/BinaryTreeComponent';
 import DepthFirstComponent from './components/DepthFirstComponent';
@@ -28,6 +29,7 @@ function App() {
     'BinaryTree': BinaryTreeComponent,
     'BinarySearchTree': BinarySearchTreeComponent,
     'DepthFirst': DepthFirstComponent,
+    'QuickSort':QuickSortComponent,
   };
 
   // Setting component

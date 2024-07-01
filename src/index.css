@@ -68,34 +68,24 @@ pre {
   color: #5662e7;
   display: block;
   margin-top: 5px;
-  padding: 0.5em;
+  padding: 1em;
   background-color: #5662e720;
   width: 100%;
   overflow: auto;
   font-size: 0.80rem !important;
 }
 
-.noSupport {
-  height: 85vh;
-  font-size: var(--size-5xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--Off-White);
-}
-
 h3 {
   color: var(--pink);
-  background-color: #df79ae14;
+  background-color: #df79ae3f;
   padding: 0.2em;
   text-align: center;
 }
 
 .reference-div {
-  background-color: #df79ae14;
+  background-color: #df79ae3f;
   text-align: center;
-  padding: 0.2em;
+  padding: 1em;
   color: var(--pink);
 }
 
@@ -138,8 +128,8 @@ h3 {
 /* S C R O L L B A R */
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 2px;
+  height: 2px;
 }
 
 /* Track */
@@ -150,11 +140,11 @@ h3 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #505050;
+  background: #50505016;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a0a0;
+  background: #656464;
 }

@@ -95,8 +95,8 @@
 /* lg */
 @media screen and (min-width: 1024px) {
    .bs-container{
-      height:80vh;
-      flex-direction: row;
+    height: 100% !important;
+    flex-direction: row;
       gap: 1em;
   }
   
@@ -107,6 +107,7 @@
   .bs-child-two{
       margin-top: 10px; 
       width: 25%;
+      padding: 0 1em 0 0;
   }
 
    }

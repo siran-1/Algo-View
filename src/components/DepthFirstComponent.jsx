@@ -116,7 +116,7 @@ function DepthFirstComponent() {
             <div className='bst-child-one'>
                 <div className="bst-visualizer">{nodeGenerator(binaryTree.root)}</div>
                 <div className="mt-1 bst-controls">
-                    <button className='btn arr-btn-unshift' onClick={() => depthValues(binaryTree.root)} disabled={disabled}>start</button>
+                    <button className='btn arr-btn-unshift' onClick={() => depthValues(binaryTree.root)} disabled={disabled}>Start &#10148;</button>
                 </div>
             </div>
             <div className="bst-child-two">

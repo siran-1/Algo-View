@@ -84,7 +84,7 @@
     margin-bottom: 10px; 
     font-size: var(--size-sm);
     overflow-y: scroll;
-    color: rgb(80, 80, 80);  
+    color: rgb(80, 80, 80);
 }
 
  /* L I N K E D L I S T - V I S U A L I Z E R */
@@ -115,7 +115,7 @@
 @media screen and (min-width: 1024px) {
     .linkedlist-container{
         flex-direction: row;
-        height: 80vh !important;
+        height: 100% !important;
         justify-content: center;
     }
     
@@ -138,6 +138,7 @@
         margin-top: 10px;  
         width: 25%;
         font-size: var(--size-sm);
+        padding: 0 1em 0 0;
     }
     
    }

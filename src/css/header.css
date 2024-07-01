@@ -13,6 +13,7 @@
     font-size: var(--size-2xl);
     user-select: none;
     text-decoration: none;
+    font-family: ikaros, -apple-system, BlinkMacSystemFont, Neuehaa, "Open sans", "Arial", sans-serif;;
 }
 
 .navbar-nav {
