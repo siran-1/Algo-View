@@ -76,6 +76,8 @@ function QuickSortComponent() {
                 <div className="quicksort-visualizer">{quickSortRenderer(arr)}</div>
                 <div className="mt-1 quicksort-controls">
                     <button className="btn arr-btn-unshift" onClick={startSorting} disabled={isSorting}>Start &#10148;</button>
+                    <button className="btn arr-btn-shift" onClick={reset} disabled={isSorting}>Reset &#10148;</button>
+
                 </div>
             </div>
             <div className="quicksort-child-two">
