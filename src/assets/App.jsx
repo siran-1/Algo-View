@@ -26,6 +26,7 @@ function App() {
     'BinaryTree':BinaryTreeComponent,
     'BinarySearchTree': BinarySearchTreeComponent,
     'DepthFirst': DepthFirstComponent,
+   
   };
 
   // Setting component

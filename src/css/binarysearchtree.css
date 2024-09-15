@@ -3,6 +3,7 @@
     padding: 10px;
     box-sizing: border-box;
     flex-direction: column;
+    background-color: var(--light-background);
 }
 
 .bst-child-one {

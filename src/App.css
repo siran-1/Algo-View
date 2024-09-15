@@ -1,8 +1,7 @@
 #root {
   max-width: 1536px;
   margin: 0 auto;
-  background-color: var(--Off-White);
-  height: 100svh;
+  height: 100%;
 }
 
 main {
@@ -10,8 +9,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.5rem;
   overflow: scroll;
+  margin-top: 0.11rem;
 }
 
 main .Empty-Content {
@@ -26,6 +25,11 @@ main .Empty-Content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#particleContainer{
+  position: relative !important;
+  z-index: -1;
 }
 
 #algo-view-png {

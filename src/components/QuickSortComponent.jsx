@@ -76,7 +76,7 @@ function QuickSortComponent() {
                 <div className="quicksort-visualizer">{quickSortRenderer(arr)}</div>
                 <div className="mt-1 quicksort-controls">
                     <button className="btn arr-btn-unshift" onClick={startSorting} disabled={isSorting}>Start &#10148;</button>
-                    <button className="btn arr-btn-shift" onClick={reset} disabled={isSorting}>Reset &#10148;</button>
+                    <button className="btn arr-btn-shift" onClick={reset} disabled={isSorting}>Reset </button>
 
                 </div>
             </div>
@@ -89,7 +89,7 @@ function QuickSortComponent() {
                     This is applied recursively to the sub-arrays formed by partitioning.
                 </p>
                 <p>
-                    The main advantage of Merge Sort algorithm is its faster performance with a time complexity of O(n log n) in all cases, making it highly predictable and reliable.
+                    The main advantage of Quick Sort algorithm is its faster performance with a time complexity of O(n log n) in all cases, making it highly predictable and reliable.
                 </p>
                 <h5>Advantages</h5>
                 <p>

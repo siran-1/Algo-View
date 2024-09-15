@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 import '../css/mergesort.css';
 
 function MergesortComponent() {
@@ -8,6 +10,7 @@ function MergesortComponent() {
     const [history, setHistory] = useState([]);
     const [animate, setAnimate] = useState(false);
     const [recursion, setRecursion] = useState(null);
+
     const isInitialMount = useRef(true);
     const isDisabled = useRef(false);
     const isSorting = useRef(false);
@@ -34,7 +37,10 @@ function MergesortComponent() {
     // Renders the given array
     const arrElementRenderer = () => {
         return arr.map((subArray, i) => (
-            <div key={i} className="sub-array">
+            <div key={i} className="sub-array" style={{
+                border: '1.5px solid lightgrey',
+                borderRadius: '5px',
+            }}>
                 {subArray.map((element, j) => (
                     <div key={j} className="element" style={{
                         backgroundColor: animate ? 'green' : colors[((element - 1) % 10) + 1],
@@ -87,7 +93,7 @@ function MergesortComponent() {
             }, 1200);
             return () => clearTimeout(timer);
         }
-        else if (recursion === 0 && history.length === 0){
+        else if (recursion === 0 && history.length === 0) {
             alert('Array Sorted');
             reset();
             return;
@@ -97,7 +103,7 @@ function MergesortComponent() {
 
 
     // Sorts Backtracking
-    const sortHistory = () => {
+    const sortHistory = async () => {
         isSorting.current = true;
         let sortingArr = history[history.length - 1];
 
@@ -153,7 +159,7 @@ function MergesortComponent() {
                 <h3>Merge Sort</h3>
                 <p>
                     Merge Sort is a sorting algorithm that follows the divide and conquer strategy.
-                    It divides the input array into equal subarrays, and does this recursively on each subarray until each subarray contains only one element.
+                    It divides the input array into equal subarrays, and does this recursively getting deeper in the stack on each subarray until each subarray contains only one element.
                     Once this is achieved, it merges each subarray while sorting them, repeating this process until every subarray is merged and sorted.</p>
                 <p>
                     The main advantage of Merge Sort algorithm is its faster performance with a time complexity of O(n log n) in all cases, making it highly predictable and reliable.

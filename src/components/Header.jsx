@@ -20,7 +20,7 @@ function Header({ onSelect }) {
 
     return (
         <div className="container shadow-sm p-3" id="header-container">
-            <a className="algo-view-title" href="">Algo View</a>
+            <a className="algo-view-title" href="">AlgoView</a>
             <ul className="navbar-nav">
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DATA STRUCTURES</a>
@@ -37,21 +37,22 @@ function Header({ onSelect }) {
                         ALGORITHMS
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="algorithmsDropdown">
-                        <li className="dropdown-submenu" 
-                            onMouseEnter={handleMouseEnterSorting} 
-                            onMouseLeave={handleMouseLeaveSorting} 
+                        <li className="dropdown-submenu"
+                            onMouseEnter={handleMouseEnterSorting}
+                            onMouseLeave={handleMouseLeaveSorting}
                             onTouchStart={handleTouchStartSorting}>
                             <a className="dropdown-item" href="#">Sorting <i className="fas fa-caret-right"></i></a>
                             {showSorting && (
                                 <div className="submenu">
+                                    <li><a className="dropdown-item" href="#" onClick={() => onSelect('BubbleSort')}>Bubble Sort</a></li>
                                     <li><a className="dropdown-item" href="#" onClick={() => onSelect('MergeSort')}>Merge Sort</a></li>
                                     <li><a className="dropdown-item" href="#" onClick={() => onSelect('QuickSort')}>Quick Sort</a></li>
                                 </div>
                             )}
                         </li>
-                        <li className="dropdown-submenu" 
-                            onMouseEnter={handleMouseEnterSearching} 
-                            onMouseLeave={handleMouseLeaveSearching} 
+                        <li className="dropdown-submenu"
+                            onMouseEnter={handleMouseEnterSearching}
+                            onMouseLeave={handleMouseLeaveSearching}
                             onTouchStart={handleTouchStartSearching}>
                             <a className="dropdown-item" href="#">Searching <i className="fas fa-caret-right"></i></a>
                             {showSearching && (
@@ -60,9 +61,9 @@ function Header({ onSelect }) {
                                 </div>
                             )}
                         </li>
-                        <li className="dropdown-submenu" 
-                            onMouseEnter={handleMouseEnterOthers} 
-                            onMouseLeave={handleMouseLeaveOthers} 
+                        <li className="dropdown-submenu"
+                            onMouseEnter={handleMouseEnterOthers}
+                            onMouseLeave={handleMouseLeaveOthers}
                             onTouchStart={handleTouchStartOthers}>
                             <a className="dropdown-item" href="#">Others <i className="fas fa-caret-right"></i></a>
                             {showOthers && (

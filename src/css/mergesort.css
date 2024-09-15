@@ -1,17 +1,18 @@
-.mergesort-container, .quicksort-container {
+.mergesort-container, .quicksort-container, .bubblesort-container {
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
     padding: 10px;
+    background-color: var(--light-background);
 }
 
-.mergesort-child-one, .quicksort-child-one {
+.mergesort-child-one, .quicksort-child-one, .bubblesort-child-one {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.mergesort-visualizer, .quicksort-visualizer {
+.mergesort-visualizer, .quicksort-visualizer, .bubblesort-visualizer {
     width: 100%;
     height: 300px;
     border: 1.5px solid var(--pink);
@@ -27,12 +28,12 @@
     box-shadow: rgba(0, 0, 0, 0.045) 0px 1px 3px, rgba(0, 0, 0, 0.399) 0px 1px 2px;
 }
 
-.mergesort-controls, .quicksort-controls {
+.mergesort-controls, .quicksort-controls, .bubblesort-contols {
     display: flex;
     gap: 0.8em;
 }
 
-.mergesort-child-two, .quicksort-child-two {
+.mergesort-child-two, .quicksort-child-two, .bubblesort-child-two {
     margin-top: 5rem;
     margin-bottom: 10px;
     font-size: var(--size-sm);
@@ -41,13 +42,13 @@
 }
 
 /* M E R G E S O R T- V I S U A L I Z E R */
-.mergesort-visualizer, .quicksort-visualizer {
+.mergesort-visualizer, .quicksort-visualizer, .bubblesort-visualizer {
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
 }
 
-.mergesort-visualizer>div, .quicksort-visualizer> div {
+.mergesort-visualizer>div, .quicksort-visualizer> div, .bubblesort-visualizer > div {
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -70,19 +71,19 @@
 
 /* lg */
 @media screen and (min-width: 1024px) {
-    .mergesort-container, .quicksort-container {
+    .mergesort-container, .quicksort-container, .bubblesort-container{
         flex-direction: row;
         height: 100% !important;
     }
 
-    .mergesort-child-one, .quicksort-child-one {
+    .mergesort-child-one, .quicksort-child-one, .bubblesort-child-one {
         width: 75%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     
-    .mergesort-visualizer, .quicksort-visualizer {
+    .mergesort-visualizer, .quicksort-visualizer, .bubblesort-visualizer {
         display: flex;
         align-items: flex-end;
         justify-content: space-around;
@@ -94,7 +95,7 @@
         width: 50px !important;
     }
 
-    .mergesort-child-two, .quicksort-child-two {
+    .mergesort-child-two, .quicksort-child-two, .bubblesort-child-two{
         margin-top: 10px;
         width: 25%;
         padding: 0 1em 0 0;
