@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 
 import '../css/binarysearchtree.css'
 
@@ -116,12 +118,12 @@ function DepthFirstComponent() {
             <div className='bst-child-one'>
                 <div className="bst-visualizer">{nodeGenerator(binaryTree.root)}</div>
                 <div className="mt-1 bst-controls">
-                    <button className='btn arr-btn-unshift' onClick={() => depthValues(binaryTree.root)} disabled={disabled}>Start &#10148;</button>
+                    <Button className='btn arr-btn-unshift' variant='success' size='sm' onClick={() => depthValues(binaryTree.root)} disabled={disabled}>Start &#10148;</Button>
                 </div>
             </div>
             <div className="bst-child-two">
                 <h3>Depth First Search</h3>
-                <h6>*Pre-Order Traversal*</h6><br />
+                <Badge bg="dark">Pre-Order Traversal*</Badge><br/>
                 <p>
                     The Depth-First Search (DFS) algorithm is a fundamental approach used in traversing or searching through a data structure like a binary search tree (BST).
                     It explores each branch as deep as possible before backtracking, which makes it an excellent choice for tasks that needs exploring all the paths in a structure.

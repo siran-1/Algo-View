@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Button from 'react-bootstrap/Button';
+
 import '../css/mergesort.css';
 
 function QuickSortComponent() {
@@ -75,8 +77,8 @@ function QuickSortComponent() {
             <div className='quicksort-child-one'>
                 <div className="quicksort-visualizer">{quickSortRenderer(arr)}</div>
                 <div className="mt-1 quicksort-controls">
-                    <button className="btn arr-btn-unshift" onClick={startSorting} disabled={isSorting}>Start &#10148;</button>
-                    <button className="btn arr-btn-shift" onClick={reset} disabled={isSorting}>Reset </button>
+                    <Button className="btn arr-btn-unshift" variant='success' size='sm' onClick={startSorting} disabled={isSorting}>Start &#10148;</Button>
+                    <Button className="btn arr-btn-shift" variant='danger' size='sm' onClick={reset} disabled={isSorting}>Reset </Button>
 
                 </div>
             </div>

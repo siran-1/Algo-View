@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from 'react-bootstrap/Button';
 
 import '../css/array.css'
 
@@ -69,12 +70,12 @@ function ArrayComponent() {
                 <div className="array-visualizer">{arrElementRenderer(currentElements)}</div>
                 <div className="mt-1 array-controls">
                     <div>
-                        <button className="btn arr-btn-unshift" onClick={() => add(null)}>Unshift</button>
-                        <button className="btn arr-btn-shift" onClick={() => remove(null)}>Shift</button>
+                        <Button className="btn arr-btn-unshift" variant='success' size='sm' onClick={() => add(null)}>Unshift</Button>
+                        <Button className="btn arr-btn-shift" variant='danger' size='sm' onClick={() => remove(null)}>Shift</Button>
                     </div>
                     <div>
-                        <button className="btn arr-btn-push" onClick={() => add(true)}>Push</button>
-                        <button className="btn arr-btn-pop" onClick={() => remove(true)}>Pop</button>
+                        <Button className="btn arr-btn-push" variant='success' size='sm' onClick={() => add(true)}>Push</Button>
+                        <Button className="btn arr-btn-pop" variant='danger' size='sm' onClick={() => remove(true)}>Pop</Button>
                     </div>
                 </div>
             </div>

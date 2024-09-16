@@ -15,7 +15,7 @@
 
   /* accents */
   --Black: #1A1B1F;
-  --Light-black: #62646d;
+  --Light-black: #a6a6a7;
 
   /* Mandate-colors */
   --white-important: #edf2f4;
@@ -84,21 +84,21 @@ h3 {
 .reference-div {
   background-color: #df79ae3f;
   text-align: center;
-  padding: 1em;
+  padding: 0.5em;
   color: var(--pink);
 }
 
+.accordHead {
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.accordHead::after{
+  font-size: 12px;
+}
 
 .btn {
   box-shadow: rgba(0, 0, 0, 0.092) 0px 1px 3px, rgba(0, 0, 0, 0.62) 0px 1px 2px;
-  transition: box-shadow 0.3s ease;
-}
-
-.btn:active {
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  position: relative;
-  top: 1px;
-  outline: none !important;
 }
 
 .btn:focus {
@@ -106,10 +106,8 @@ h3 {
   box-shadow: rgba(0, 0, 0, 0.092) 0px 1px 3px, rgba(0, 0, 0, 0.62) 0px 1px 2px;
 }
 
-.dropdown-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+Button {
+  border: none !important;
 }
 
 /* F O N T S */
@@ -133,13 +131,13 @@ h3 {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #ebe9e9;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #50505016;
+  background: #414141f4;
   border-radius: 10px;
 }
 

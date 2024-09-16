@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Button from 'react-bootstrap/Button';
+
+
 import Dropdown from 'react-bootstrap/Dropdown';
 
 import '../css/mergesort.css';
@@ -38,7 +41,7 @@ function MergesortComponent() {
     const arrElementRenderer = () => {
         return arr.map((subArray, i) => (
             <div key={i} className="sub-array" style={{
-                border: '1.5px solid lightgrey',
+                border: '0.7px solid lightgrey',
                 borderRadius: '5px',
             }}>
                 {subArray.map((element, j) => (
@@ -48,7 +51,7 @@ function MergesortComponent() {
                         transition: animate ? 'all 0.8s ease' : '',
                         width: '50px',
                         height: element * 22,
-                        border: '1px solid var(--Black)',
+                        border: '0.5px solid var(--Black)',
                     }}>
                         {element}
                     </div>
@@ -151,8 +154,8 @@ function MergesortComponent() {
             <div className='mergesort-child-one'>
                 <div className="mergesort-visualizer">{arrElementRenderer()}</div>
                 <div className="mt-1 mergesort-controls">
-                    <button className="btn arr-btn-unshift" onClick={sortInitiate} disabled={isDisabled.current}>Start &#10148;</button>
-                    <button className="btn arr-btn-shift" onClick={reset}>reset</button>
+                    <Button className="btn arr-btn-unshift" variant='success' size='sm' onClick={sortInitiate} disabled={isDisabled.current}>Start &#10148;</Button>
+                    <Button className="btn arr-btn-shift" variant='danger' size='sm' onClick={reset}>reset</Button>
                 </div>
             </div>
             <div className="mergesort-child-two">

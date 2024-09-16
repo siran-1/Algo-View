@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import Button from 'react-bootstrap/Button';
+import Accordion from 'react-bootstrap/Accordion';
+
 
 import '../css/linkedlist.css'
 
@@ -106,15 +109,15 @@ function LinkedlistComponent() {
                 <div className="mt-1 linkedlist-controls">
                     <div>
                         <input type='text' className='form-control' value={inputValue} onChange={(e) => setNewValue(e.target.value)}></input>
-                        <button className="btn btn-add" onClick={() => addFirst()}>Add First</button>
-                        <button className="btn btn-add" onClick={() => addLast()}>Add Last</button>
+                        <Button className="btn btn-add" variant='success' onClick={() => addFirst()} size="sm">Add First</Button>
+                        <Button className="btn btn-add" variant='success' onClick={() => addLast()} size="sm">Add Last</Button>
                     </div>
                     <div>
-                        <button className="btn btn-remove" onClick={() => removeFirst()}>Remove First</button>
-                        <button className="btn btn-remove" onClick={() => removeLast()}>Remove Last</button>
+                        <Button className="btn btn-remove" variant='danger' onClick={() => removeFirst()} size="sm">Remove First</Button>
+                        <Button className="btn btn-remove" variant='danger' onClick={() => removeLast()} size="sm">Remove Last</Button>
                     </div>
                     <div>
-                        <button className="btn btn-remove" onClick={() => reset()}>Reset</button>
+                        <Button className="btn btn-remove" variant='warning' onClick={() => reset()} size="sm">Reset</Button>
                     </div>
                 </div>
             </div>
@@ -146,17 +149,30 @@ function LinkedlistComponent() {
                 </p>
                 <h5>Custom class</h5>
                 <p> We can define a node using a custom class constructor.
-                    <pre>
-                        {`class Node {
+                    <Accordion>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header className='accordHead'>Code</Accordion.Header>
+                            <Accordion.Body>
+                                <pre>
+                                    {`class Node {
     constructor(data, next = null) {
         this.data = data;
         this.next = next;
     }
 }`}
-                    </pre>
+                                </pre>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+
                     <p>and add a custom class to perform operations like insertion, deletion, sorting, etc..</p>
-                    <pre>
-                        {`class LinkedList {
+
+                    <Accordion>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header className='accordHead'>Code</Accordion.Header>
+                            <Accordion.Body>
+                                <pre>
+                                    {`class LinkedList {
     constructor() {
         this.head = null;
         this.size = 0;
@@ -221,7 +237,10 @@ function LinkedlistComponent() {
         return this.head;
     }
 }`}
-                    </pre>
+                                </pre>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
                 </p>
                 <div className='reference-div'>
                     <p>For more detailed documentation, visit: <a target='_blank' href='https://www.freecodecamp.org/news/implementing-a-linked-list-in-javascript/'>freecodecamp.org</a></p>

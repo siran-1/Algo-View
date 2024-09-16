@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+import Button from 'react-bootstrap/Button';
+import Accordion from 'react-bootstrap/Accordion';
+
 
 import '../css/binarytree.css'
 class Node {
@@ -82,8 +85,8 @@ function BinaryTreeComponent() {
             <div className='bs-child-one'>
                 <div className="bs-visualizer">{depthValues(binaryTree.root)}</div>
                 <div className="mt-1 bst-controls">
-                    <button className='btn arr-btn-unshift' onClick={insertion}>Insert &#8677; {values[0]}</button>
-                    <button className="btn arr-btn-shift" onClick={reset}>reset</button>
+                    <Button className='btn arr-btn-unshift' variant='success' size='sm' onClick={insertion}>Insert &#8677; {values[0]}</Button>
+                    <Button className="btn arr-btn-shift" variant='danger' size='sm' onClick={reset}>reset</Button>
                 </div>
             </div>
             <div className="bs-child-two">
@@ -110,8 +113,12 @@ function BinaryTreeComponent() {
                     </li>
                 </ol>
                 <h4>Implementation:</h4>
-                <pre>
-                    {`class Node {
+                <Accordion>
+                    <Accordion.Item eventKey="0">
+                        <Accordion.Header className='accordHead'>Code</Accordion.Header>
+                        <Accordion.Body>
+                            <pre>
+                                {`class Node {
     constructor(data) {
         this.data = data;
         this.left = null;
@@ -152,13 +159,16 @@ class BinaryTree {
     }
 }
 `}
-                </pre>
+                            </pre>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                </Accordion>
                 <div className='reference-div'>
                     <p>For more detailed documentation, visit: <a target='_blank' href='https://www.naukri.com/code360/library/binary-tree-javascript'>Naukri.com: Binary Tree</a></p>
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 

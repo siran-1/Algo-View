@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Button from 'react-bootstrap/Button';
+
 import Dropdown from 'react-bootstrap/Dropdown';
 
 import '../css/mergesort.css';
@@ -101,7 +103,7 @@ function BubbleSortComponent() {
             <div className='bubblesort-child-one'>
                 <div className="bubblesort-visualizer">{arrElementRenderer()}</div>
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    <Dropdown.Toggle variant="dark" size='sm' id="dropdown-basic">
                         Speed
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
@@ -110,8 +112,8 @@ function BubbleSortComponent() {
                     </Dropdown.Menu>
                 </Dropdown>
                 <div className="mt-1 bubblesort-controls">
-                    <button className="btn arr-btn-unshift" onClick={bubbleSortStart} disabled={isDisabled.current}>Start &#10148;</button>
-                    <button className="btn arr-btn-shift" onClick={reset}>stop / reset</button>
+                    <Button className="btn arr-btn-unshift" variant='success' size='sm' onClick={bubbleSortStart} disabled={isDisabled.current}>Start &#10148;</Button>
+                    <Button className="btn arr-btn-shift" variant='danger' size='sm' onClick={reset}>stop / reset</Button>
                 </div>
             </div>
             <div className="bubblesort-child-two">

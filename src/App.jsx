@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-//import Particles from 'react-tsparticles';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
@@ -139,9 +138,9 @@ function App() {
           style={{ position: 'absolute' }}></Particles>
         </div>
         {selectedItem ? (SelectedComponent ? <SelectedComponent /> : <p>No component found for {selectedItem}</p>) : (
-          <div className='container Empty-Content' >
+          <div className='container Empty-Content'>
             <p>Visualize JavaScript Data structures and Algorithms</p>
-            <img id="algo-view-png" src={algoView} />
+            <img id="algo-view-png" src={algoView} draggable='false' />
             <p className='info'>Select from the above dropdown</p>
           </div>
         )}

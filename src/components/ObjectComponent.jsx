@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+
 import '../css/object.css';
 
 function ObjectComponent() {
@@ -97,13 +99,13 @@ function ObjectComponent() {
             <div className='object-child-one'>
                 <div className="object-visualizer">{renderObject(currentObjects)}</div>
                 <div className="mt-1 object-controls">
-                    <div><button className='btn btn-add arr-btn-unshift object-addBtn' onClick={addObject}>Add Object</button></div>
+                    <div><Button className='btn btn-add arr-btn-unshift object-addBtn' variant='success' size="sm" onClick={addObject}>Add Object</Button></div>
                     <div>
                         <input type='text' className='form-control object-addKey' id="newObj-prop-key" placeholder='Enter Key' onChange={(e) => { setkeyvalue([e.target.value, keyValue[1]]) }} value={keyValue[0]} />
                         <input type='text' className='form-control object-addValue' id="newObj-prop-value" placeholder='Enter Value' onChange={(e) => { setkeyvalue([keyValue[0], e.target.value]) }} value={keyValue[1]} />
-                        <div title={isDisabled[0] ? "Select an object first!" : ""}><button className='btn btn-add arr-btn-unshift object-addBtn' id="newObj-prop-AddBtn" onClick={addObjectProp} disabled={isDisabled[0]} >Insert</button></div>
+                        <div title={isDisabled[0] ? "Select an object first!" : ""}><Button className='btn btn-add arr-btn-unshift object-addBtn' variant="success" id="newObj-prop-AddBtn" size="sm" onClick={addObjectProp} disabled={isDisabled[0]} >Insert</Button></div>
                     </div>
-                    <div><button className='btn btn-remove arr-btn-shift object-addBtn' onClick={reset}>Reset</button></div>
+                    <div><Button className='btn btn-remove arr-btn-shift object-addBtn' variant="danger" size='sm' onClick={reset}>Reset</Button></div>
                 </div>
             </div>
             <div className="object-child-two">

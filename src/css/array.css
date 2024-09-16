@@ -64,39 +64,6 @@
     font-size: var(--size-xs);
 }
 
-.arr-btn-unshift {
-    background-color: rgb(76, 202, 160);
-}
-
-.arr-btn-unshift:hover {
-    background-color: rgb(85, 248, 194);
-}
-
-.arr-btn-shift {
-    background-color: rgb(197, 69, 69);
-}
-
-.arr-btn-shift:hover {
-    background-color: rgb(250, 90, 90);
-}
-
-.arr-btn-pop {
-    background-color: rgb(197, 69, 69);
-}
-
-.arr-btn-pop:hover {
-    background-color: rgb(250, 90, 90);
-}
-
-.arr-btn-push {
-    background-color: rgb(76, 202, 160);
-}
-
-.arr-btn-push:hover {
-    background-color: rgb(85, 248, 194);
-}
-
-
 /* media queries */
 /* xs */
 @media screen and (min-width: 475px) {}
@@ -135,7 +102,7 @@
 
     .array-child-two {
         margin-top: 10px;
-        width: 25%;
+        width: 30%;
         padding: 0 1em 0 0;
     }
 }

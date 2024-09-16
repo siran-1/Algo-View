@@ -9,8 +9,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
-  margin-top: 0.11rem;
+  overflow: auto;
 }
 
 main .Empty-Content {
@@ -18,7 +17,7 @@ main .Empty-Content {
 }
 
 .Empty-Content {
-  color: #a5a3a3;
+  color: #0c0c0c;
   font-size: var(--size-3xl);
   user-select: none;
   display: flex;

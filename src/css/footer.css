@@ -1,19 +1,19 @@
 #footer-container {
-    background-color: var(--light-background);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
-    position: relative;
 }
 
 .link {
-    color: var(--Black);
+    color: var(--Light-black);
     text-align: center;
-    line-height: 0.9em;
-    font-size: var(--size-2xl);
     user-select: none;
     text-decoration: none;
+}
+
+.link:hover{
+    color: var(--light-background)
 }
 
 
